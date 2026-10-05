@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Keep the Django apps already listed here.
+    "portfolio_app"
 ]
 
 MIDDLEWARE = [
