@@ -29,3 +29,7 @@ class Portfolio(models.Model):
 
     def __str__(self):
         return self.title
+
+class Project(models.Model):
+    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
+    title = 
