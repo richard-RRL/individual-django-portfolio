@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.index, name = 'index'),
     path('home/', views.index, name='index'),
     path('admin/', views.index, name='admin'),
+    path('students/', views.StudentListView.as_view(), name='student-list'),
 ]
