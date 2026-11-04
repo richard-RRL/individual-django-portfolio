@@ -18,5 +18,5 @@ def index(request):
 
 class StudentListView(ListView):
     model = Student
-    template_name = 'portfolio_app/student.list.html'
+    template_name = 'portfolio_app/student_list.html'
     context_object_name = 'students'
