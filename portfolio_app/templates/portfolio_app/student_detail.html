@@ -7,6 +7,12 @@
 <p>Email: {{ student.email }}</p>
 <p>Major: {{ student.get_major_display }}</p>
 
+<p>Portfolio: </p>
+<a href= "{% url 'portfolio-detail' student.portfolio.student.pk %}">
+    <li>{{ student.portfolio.title }}</li>
+</a>
+
+
 <a href="{% url 'student-list' %}">
     Back to Students
 </a>

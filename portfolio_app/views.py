@@ -1,8 +1,6 @@
 from django.shortcuts import render
-from .models import Portfolio
-from django.views.generic import ListView
-from .models import Student
-from django.views.generic import DetailView
+from .models import Portfolio, Student
+from django.views.generic import ListView, DetailView
 # Create your views here.
 
 def index(request):
@@ -26,3 +24,8 @@ class StudentDetailView(DetailView):
     model = Student
     template_name = 'portfolio_app/student_detail.html'
     context_object_name = 'student'
+
+class PortfolioDetailView(DetailView):
+    model = Portfolio
+    template_name = 'portfolio_app/portfolio_detail.html'
+    context_object_name = 'portfolio'

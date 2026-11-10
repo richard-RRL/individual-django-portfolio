@@ -1,0 +1,23 @@
+<!--
+Portfolio Title, About Information
+Contact Email, and active status
+Also include project name, description
+based on each associated portfolio (use one to many)
+Display a no projects message
+-->
+{% extends "portfolio_app/base_template.html" %}
+
+{% block content %}
+
+<h2>{{ student.name }}</h2>
+
+<p>{{ portfolio.title }}</p>
+<p>Description: {{ portfolio.about }}</p>
+<p>Contact Email: {{ portfolio.contact_email }} </p>
+
+
+<a href="{% url 'student-detail' portfolio.student.pk %}">
+    Back to Student Detail
+</a>
+
+{% endblock %}

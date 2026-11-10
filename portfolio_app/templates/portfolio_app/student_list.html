@@ -2,14 +2,20 @@
 
 {% block content %}
 
+<navigation>
+    <a href="{%url 'index' %}">Home</a>
+    <a href="{%url 'admin' %}">Admin</a>
+    <a href="{%url 'student-list' %}">Students</a>
+</navigation>
 <h2>Students</h2>
 
 <ul>
     {% for student in students %}
     <a href="{% url 'student-detail' pk=student.pk %}">
         <li>{{ student.name }}</li>
+    </a>
     {% empty %}
-        <li>No students found.</li>
+        <p>No students found.</p>
     {% endfor %}
 </ul>
 
