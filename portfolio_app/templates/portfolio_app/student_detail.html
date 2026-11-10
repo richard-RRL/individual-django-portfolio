@@ -8,10 +8,14 @@
 <p>Major: {{ student.get_major_display }}</p>
 
 <p>Portfolio: </p>
-<a href= "{% url 'portfolio-detail' student.portfolio.student.pk %}">
+{% if student.portfolio %}
+<a href= "{% url 'portfolio-detail' student.portfolio.pk %}">
     <li>{{ student.portfolio.title }}</li>
+    <p></p>
 </a>
-
+{% else %}
+<p>This student does not have a portfolio.</p>
+{% endif %}
 
 <a href="{% url 'student-list' %}">
     Back to Students

@@ -2,13 +2,14 @@
 
 {% block content %}
 
-<a href="{%url 'index' %}">Home</a>
-<a href="{%url 'admin' %}">Admin</a>
-<a href="{%url 'student-list' %}">Students</a>
 <h2>Active Student Portfolios</h2>
+<!-- This will display a list of the available portfolios
+ along with a link to each one.-->
 <ul>
     {% for portfolio in active_portfolios %}
+        <a href="{% url 'portfolio-detail' portfolio.pk %}">
         <li>{{ portfolio.title }} </li>
+        </a>
     {% empty %}
         </li>No active portfolios found.</li>
     {% endfor %}
