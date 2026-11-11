@@ -1,0 +1,30 @@
+<!--
+Portfolio Title, About Information
+Contact Email, and active status
+Also include project name, description
+based on each associated portfolio (use one to many)
+Display a no projects message
+-->
+{% extends "portfolio_app/base_template.html" %}
+
+{% block content %}
+
+<h2>{{ portfolio.title }}</h2>
+
+<p>Portfolio Owner: {{ portfolio.student.name }}</p>
+<p>Description: {{ portfolio.about }}</p>
+<p>Contact Email: {{ portfolio.contact_email }} </p>
+
+<h3>Projects</h3>
+<ul>
+    {% for project in portfolio.project_set.all %}
+        <li>{{ project.title }} - {{ project.description }}</li>
+    {% empty %}
+        </li>No projects found.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'student-detail' portfolio.student.pk %}">
+    Back to Student Detail
+</a>
+
+{% endblock %}

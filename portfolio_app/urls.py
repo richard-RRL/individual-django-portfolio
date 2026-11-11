@@ -1,8 +1,12 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
     path('', views.index, name = 'index'),
     path('home/', views.index, name='index'),
     path('admin/', views.index, name='admin'),
+    path('students/', views.StudentListView.as_view(), name='student-list'),
+    path('students/<int:pk>/', views.StudentDetailView.as_view(), name='student-detail'),
+    path('students/portfolio/<int:pk>', views.PortfolioDetailView.as_view(), name='portfolio-detail'),
+
 ]

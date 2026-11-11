@@ -9,6 +9,11 @@
         <header>
             <h1>Computer Science Portfolios</h1>
         </header>
+        <nav>
+            <a href="{%url 'index' %}">Home</a>
+            <a href="{%url 'admin' %}">Admin</a>
+            <a href="{%url 'student-list' %}">Students</a>
+        </nav>
 
         <main>
             {% block content %}
