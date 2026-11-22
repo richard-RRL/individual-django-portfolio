@@ -7,6 +7,10 @@
 <p>Email: {{ student.email }}</p>
 <p>Major: {{ student.get_major_display }}</p>
 
+<a href="{% url 'student-update' student.pk %}">
+    Update Student
+</a>
+
 <p>Portfolio: </p>
 {% if student.portfolio %}
 <a href= "{% url 'portfolio-detail' student.portfolio.pk %}">

@@ -1,3 +1,6 @@
+<!-- All of this html will be inherited by other files
+ of the portfolio application to maintain set style and
+ the navigation menu at the top of a page.-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +17,7 @@
             <a href="{%url 'admin' %}">Admin</a>
             <a href="{%url 'student-list' %}">Students</a>
         </nav>
-
+        <!-- This part just defines what will be specific to this page -->
         <main>
             {% block content %}
             {% endblock %}
